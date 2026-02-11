@@ -1,0 +1,129 @@
+% Harvard-Format Professional CV — Glenda Divina Atalaya Rondón
+% Compile with: xelatex cv-atalaya.tex
+
+\documentclass[10pt,letterpaper]{article}
+
+\usepackage[margin=0.5in, top=0.45in, bottom=0.45in]{geometry}
+\usepackage{fontspec}
+\usepackage{fontawesome5}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{hyperref}
+\usepackage{tabularx}
+
+% --- Fonts (macOS system fonts — always available) ---
+\setmainfont{Times New Roman}
+\setsansfont{Helvetica Neue}
+
+% --- Colors (subtle, Harvard-appropriate) ---
+\definecolor{headrule}{HTML}{2c3e50}
+\definecolor{linkblue}{HTML}{1a5276}
+
+% --- Hyperlinks ---
+\hypersetup{colorlinks=true, urlcolor=linkblue, linkcolor=linkblue, pdfborder={0 0 0}}
+
+% --- Section Formatting (Harvard style: centered, bold, with rules) ---
+\titleformat{\section}
+  {\normalsize\bfseries\centering}
+  {}
+  {0em}
+  {\vspace{-0.3em}\hrulefill\quad}[\quad\hrulefill\vspace{-0.3em}]
+\titlespacing{\section}{0pt}{0.5em}{0.2em}
+
+% --- List Formatting (tight bullets) ---
+\setlist[itemize]{nosep, left=0pt, label=\textbullet, itemsep=0pt, topsep=1pt}
+
+% --- No page numbers ---
+\pagestyle{empty}
+
+% --- Custom Commands ---
+\newcommand{\entry}[4]{%
+  \noindent\textbf{#1} \hfill #2 \par\nopagebreak
+  \textit{#3} \hfill \textit{#4} \par\nopagebreak
+}
+
+\newcommand{\entryshort}[3]{%
+  \noindent\textbf{#1}\enspace---\enspace\textit{#2} \hfill #3 \par
+}
+
+\begin{document}
+
+% ============================================
+% HEADER
+% ============================================
+\begin{center}
+  {\Large\bfseries Glenda Divina Atalaya Rondón} \\[3pt]
+  \faIcon{map-marker-alt}\enspace Lima, Perú
+  \quad\faIcon{envelope}\enspace \href{mailto:glenda.atalaya@gmail.com}{glenda.atalaya@gmail.com}
+  \quad\faIcon{linkedin}\enspace \href{https://linkedin.com/in/glendaatalayarondon}{linkedin.com/in/glendaatalayarondon}
+  \quad\faIcon{globe}\enspace \href{https://bit.ly/PortafolioGlenda}{Portafolio}
+\end{center}
+
+\vspace{-0.5em}
+\noindent\rule{\textwidth}{0.8pt}
+\vspace{-0.6em}
+
+% ============================================
+% EXPERIENCIA
+% ============================================
+\section{Experiencia Profesional}
+
+\entry{Universidad Peruana Cayetano Heredia (UPCH)}{Lima, Perú}{Content Manager}{2024 -- Presente}
+\begin{itemize}
+  \item Lideró la estrategia de Social Media para ``Soy Cayetano'' (52K seguidores), alcanzando un engagement orgánico de hasta 13.7\%
+  \item Gestionó las cuentas PGE y PRE Cayetano, generando +150 leads orgánicos y 476K+ visualizaciones en 30 días
+  \item Incrementó el alcance de PRE Cayetano a +10,755 en FB y +9,881 en IG, con +650 interacciones orgánicas mensuales
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Universidad María Auxiliadora (UMA)}{Lima, Perú}{Asistente de Marketing y Publicidad}{2021 -- 2023}
+\begin{itemize}
+  \item Administró 3 redes sociales con +30 publicaciones mensuales, manteniendo consistencia de marca y calendario editorial
+  \item Ejecutó campañas en Meta Ads y TikTok Ads, alcanzando 26K de alcance y 554 interacciones por contenido en TikTok
+  \item Implementó flujos de CRM (HubSpot) para seguimiento de leads y apoyó producción audiovisual institucional
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Asociación Cultural Wasi}{Lima, Perú}{Gestora Cultural \& Community Manager}{2020}
+\begin{itemize}
+  \item Dirigió la estrategia digital para talleres culturales, contribuyendo al proyecto ganador de ``Estímulos de Cultura'' del Ministerio de Cultura del Perú
+\end{itemize}
+\vspace{0.2em}
+
+\entry{Decodivi}{Lima, Perú}{Content Creator}{2019 -- 2020}
+\begin{itemize}
+  \item Produjo contenido audiovisual para marca de eventos, generando +10,200 visualizaciones y +7,500 espectadores nuevos en TikTok
+\end{itemize}
+\vspace{0.2em}
+
+% ============================================
+% EDUCACIÓN
+% ============================================
+\section{Educación}
+
+\entry{Universidad San Martín de Porres}{Lima, Perú}{Bachiller en Ciencias de la Comunicación}{2017 -- 2022}
+\vspace{0.2em}
+
+\entryshort{Toulouse Lautrec}{Diplomado en Social Media}{2022 -- 2023}
+\vspace{0.1em}
+\entryshort{La Calle --- Escuela Creativa}{Creatividad Publicitaria}{2025}
+\vspace{0.1em}
+\entryshort{IPAD}{Publicidad Digital}{2024}
+\vspace{0.1em}
+\entryshort{IPP}{Analítica Digital}{2023}
+\vspace{0.2em}
+
+% ============================================
+% SKILLS
+% ============================================
+\section{Habilidades y Herramientas}
+
+\begin{tabularx}{\textwidth}{@{}l X@{}}
+\textbf{Estrategia:} & Social Media Strategy, Content Management, Email Marketing, Community Management, Lead Generation \\
+\textbf{Publicidad:} & Meta Ads (FB \& IG), TikTok Ads, Redacción Creativa, Storytelling, Creatividad Publicitaria \\
+\textbf{Herramientas:} & HubSpot CRM, Canva, CapCut, IA Generativa, Video Production \\
+\textbf{Idiomas:} & Español (nativo) \\
+\end{tabularx}
+
+\end{document}
