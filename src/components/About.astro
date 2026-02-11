@@ -2,39 +2,84 @@
 import { siteConfig } from "../config";
 ---
 
-<section id="about" class="p-8 sm:p-12 md:p-16 lg:p-24">
-  <div>
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start">
-      <div class="lg:col-span-4">
-        <h2
-          class="text-3xl sm:text-4xl md:text-5xl xl:text-7xl font-bold text-gray-900"
-        >
-          Sobre Mi
-        </h2>
-        <div
-          class="w-[75px] h-[5px] mt-2 rounded-full"
-          style={`background-color: ${siteConfig.accentColor}`}
-        >
+<section id="about" class="relative py-16 sm:py-20 md:py-28 overflow-hidden" style={`background-color: ${siteConfig.colors.cream};`}>
+  <div class="max-w-7xl mx-auto px-6 sm:px-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-start">
+      <!-- Left: Hello text + bio + LinkedIn bar -->
+      <div class="space-y-6 sm:space-y-8">
+        <div>
+          <h2 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold" style={`color: ${siteConfig.colors.dark};`}>
+            Hello,<br />
+            <span>I'm </span>
+            <span style={`color: ${siteConfig.colors.orange};`}>{siteConfig.firstName}</span> !
+          </h2>
         </div>
-      </div>
 
-      <div class="lg:col-span-8 space-y-8">
-        <p class="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-600">
-          <Fragment set:html={siteConfig.aboutMe} />
+        <p class="text-base sm:text-lg text-gray-700 leading-relaxed max-w-lg">
+          {siteConfig.aboutMe}
         </p>
 
-        <div class="pt-4">
-          <div class="flex flex-wrap gap-3">
-            {
-              siteConfig.skills.map((skill) => (
-                <span class="px-3 sm:px-4 py-1.5 sm:py-2 bg-gray-100 text-gray-800 rounded-full text-sm sm:text-base md:text-lg font-medium hover:bg-gray-200 transition-colors duration-200">
-                  {skill}
-                </span>
-              ))
-            }
+        <!-- LinkedIn search bar -->
+        <a
+          href={siteConfig.social.linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="linkedin-bar"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <path d="m21 21-4.3-4.3"></path>
+          </svg>
+          linkedin.com/in/glendaatalayarondon
+        </a>
+      </div>
+
+      <!-- Right: Photo + overlapping contact card -->
+      <div class="relative">
+        <!-- Second photo or reuse -->
+        <img
+          src={`${import.meta.env.BASE_URL}/profile.jpg`}
+          alt={siteConfig.name}
+          class="w-full max-w-sm ml-auto rounded-lg object-cover object-top"
+          style="aspect-ratio: 3/4;"
+        />
+
+        <!-- Role badge -->
+        <div
+          class="absolute top-4 -left-2 sm:left-4 px-4 py-2 rounded-full text-sm font-semibold text-white"
+          style={`background-color: ${siteConfig.colors.green};`}
+        >
+          Content Manager
+        </div>
+
+        <!-- Contact card overlapping -->
+        <div class="contact-card absolute -bottom-8 -left-4 sm:left-0 w-64 sm:w-72 z-10 shadow-2xl">
+          <h3 class="text-lg font-bold mb-4" style="font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.5rem;">
+            <span style={`color: ${siteConfig.colors.orange};`}>Contacto</span>
+          </h3>
+          <div class="space-y-3 text-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-white/50">📍</span>
+              <span class="text-white/80">{siteConfig.location}</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-white/50">✉</span>
+              <a href={`mailto:${siteConfig.social.email}`} class="text-white/80 hover:text-white transition-colors text-xs sm:text-sm break-all">
+                {siteConfig.social.email}
+              </a>
+            </div>
+            <div class="flex items-center gap-2">
+              <span class="text-white/50">🔗</span>
+              <a href={siteConfig.social.linkedin} target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors" style={`color: ${siteConfig.colors.orange};`}>
+                LinkedIn
+              </a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+
+  <!-- SOCIAL MEDIA watermark -->
+  <div class="watermark -bottom-8 right-0">SOCIAL MEDIA</div>
 </section>

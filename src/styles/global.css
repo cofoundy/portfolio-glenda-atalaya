@@ -1,12 +1,49 @@
 @import "tailwindcss";
 
-body {
-  font-family: 'Source Sans 3', 'IBM Plex Mono', sans-serif;
+:root {
+  --color-dark: #1A1A1A;
+  --color-orange: #D4832B;
+  --color-gold: #DAA520;
+  --color-green: #2D3B2D;
+  --color-cream: #F5F0E8;
+}
+
+html {
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  overflow-x: hidden;
+  background-color: var(--color-cream);
+  color: #333;
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Libre Baskerville', Georgia, serif;
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+/* Decorative serif for section labels */
+.font-editorial {
+  font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* Star sparkle */
+.sparkle {
+  color: var(--color-gold);
+  display: inline-block;
+}
+
+.sparkle-animate {
+  animation: sparkle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes sparkle-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.85); }
 }
 
 /* Scroll Reveal */
@@ -21,7 +58,162 @@ h1, h2, h3, h4, h5, h6 {
   transform: translateY(0);
 }
 
-/* Card hover effect */
+/* Staggered reveal */
+.reveal-delay-1 { transition-delay: 0.1s; }
+.reveal-delay-2 { transition-delay: 0.2s; }
+.reveal-delay-3 { transition-delay: 0.3s; }
+.reveal-delay-4 { transition-delay: 0.4s; }
+
+/* Hero fade in */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.animation-delay-100 { animation-delay: 0.1s; }
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-300 { animation-delay: 0.3s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+.animation-delay-500 { animation-delay: 0.5s; }
+.animation-delay-600 { animation-delay: 0.6s; }
+.animation-delay-700 { animation-delay: 0.7s; }
+
+/* Overlapping PORTFOLIO text effect */
+.text-stack {
+  position: relative;
+  line-height: 0.85;
+}
+
+.text-stack span {
+  display: block;
+  opacity: 0.15;
+}
+
+.text-stack span:last-child {
+  opacity: 1;
+}
+
+/* Hashtag badges */
+.hashtag {
+  display: inline-block;
+  padding: 6px 16px;
+  border: 1.5px solid var(--color-orange);
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--color-orange);
+  transition: all 0.3s ease;
+}
+
+.hashtag:hover {
+  background-color: var(--color-orange);
+  color: white;
+}
+
+/* Tool badge (like Ps, Ai icons) */
+.tool-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.9rem;
+  background-color: var(--color-orange);
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.tool-badge:hover {
+  transform: scale(1.1);
+}
+
+/* Skill pill */
+.skill-pill {
+  padding: 8px 20px;
+  border: 1.5px solid #555;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: #333;
+  transition: all 0.3s ease;
+}
+
+.skill-pill:hover {
+  border-color: var(--color-orange);
+  color: var(--color-orange);
+}
+
+/* Contact card */
+.contact-card {
+  background-color: var(--color-dark);
+  color: white;
+  border-radius: 16px;
+  padding: 24px;
+}
+
+/* LinkedIn search bar style */
+.linkedin-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--color-orange);
+  color: white;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.linkedin-bar:hover {
+  background-color: #c0742a;
+  transform: translateY(-2px);
+}
+
+/* Scroll down circle */
+.scroll-circle {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-green);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  line-height: 1.2;
+}
+
+.scroll-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Watermark text behind sections */
+.watermark {
+  position: absolute;
+  font-family: 'Playfair Display', serif;
+  font-weight: 900;
+  font-size: clamp(4rem, 12vw, 10rem);
+  color: rgba(0, 0, 0, 0.04);
+  text-transform: uppercase;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+
+/* Card hover */
 .card-hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -29,19 +221,4 @@ h1, h2, h3, h4, h5, h6 {
 .card-hover:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
-}
-
-/* Timeline dot */
-.timeline-dot {
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  position: absolute;
-  left: -6px;
-  top: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.timeline-dot:hover {
-  transform: scale(1.4);
 }

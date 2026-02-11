@@ -1,128 +1,158 @@
 export const siteConfig = {
   name: "Glenda Atalaya Rondón",
+  firstName: "Glenda",
   title: "Content Manager & Estratega de Social Media",
   description:
     "Comunicadora Social con 5+ años liderando estrategias de redes sociales para universidades y marcas en Perú",
-  accentColor: "#7EC8E3",
+  quote:
+    "Me apasiona crear contenido de valor que conecte con las audiencias y genere resultados medibles.",
+
+  // Color palette inspired by editorial pin
+  colors: {
+    dark: "#1A1A1A",
+    orange: "#D4832B",
+    gold: "#DAA520",
+    green: "#2D3B2D",
+    cream: "#F5F0E8",
+    white: "#FFFFFF",
+  },
+
   social: {
     email: "glenda.atalaya@gmail.com",
     linkedin: "https://linkedin.com/in/glendaatalayarondon",
   },
+
+  location: "Lima, Perú",
+
   aboutMe:
-    "Comunicadora Social con más de 5 años de experiencia liderando y ejecutando estrategias de Social Media en el sector educativo. Especializada en gestión de redes sociales, redacción creativa, Meta Ads y TikTok Ads. He gestionado las cuentas oficiales de universidades como la Universidad Peruana Cayetano Heredia (UPCH) y la Universidad María Auxiliadora (UMA), generando comunidad digital y captación de leads orgánicos. Me apasiona crear contenido de valor que conecte con las audiencias y genere resultados medibles.",
-  skills: [
-    "Social Media Strategy",
-    "Content Management",
-    "Meta Ads",
-    "TikTok Ads",
-    "Redacción Creativa",
-    "CapCut",
-    "CRM (HubSpot)",
-    "Email Marketing",
-    "Cobertura de Eventos",
-    "IA (Gemini, Sora, Freepik)",
+    "Comunicadora Social con más de 5 años de experiencia liderando y ejecutando estrategias de Social Media en el sector educativo. Especializada en gestión de redes sociales, redacción creativa, Meta Ads y TikTok Ads. He gestionado las cuentas oficiales de universidades como la Universidad Peruana Cayetano Heredia (UPCH) y la Universidad María Auxiliadora (UMA), generando comunidad digital y captación de leads orgánicos.",
+
+  stats: [
+    { value: "52K+", label: "Seguidores gestionados" },
+    { value: "150+", label: "Leads orgánicos" },
+    { value: "5+", label: "Años de experiencia" },
+    { value: "476K+", label: "Visualizaciones" },
   ],
+
+  skills: {
+    tools: [
+      { name: "Meta", short: "Meta" },
+      { name: "TikTok", short: "TT" },
+      { name: "CapCut", short: "CC" },
+      { name: "HubSpot", short: "HS" },
+      { name: "Canva", short: "Cv" },
+    ],
+    areas: [
+      "Social Media Strategy",
+      "Content Management",
+      "Redacción Creativa",
+      "Email Marketing",
+      "Cobertura de Eventos",
+      "IA Generativa",
+    ],
+  },
+
+  hashtags: [
+    "#ContentStrategy",
+    "#SocialMedia",
+    "#CommunityManager",
+    "#MarketingDigital",
+    "#Storytelling",
+    "#DataDriven",
+  ],
+
   projects: [
     {
       name: "Soy Cayetano — UPCH",
       description:
         "Estrategia de Social Media para la cuenta principal de la Universidad Cayetano Heredia. 52K seguidores, +1.5 engagement promedio, contenido orgánico con engagement de hasta 13.7%.",
       skills: ["Instagram", "Facebook", "TikTok", "Content Strategy"],
+      metric: "13.7%",
+      metricLabel: "Engagement máx.",
     },
     {
       name: "PGE de Cayetano",
       description:
-        "Programa de Formación para Gente con Experiencia. +150 leads orgánicos en campaña 2026-I, 476K+ visualizaciones en 30 días, +1.1 engagement promedio.",
+        "Programa de Formación para Gente con Experiencia. +150 leads orgánicos en campaña 2026-I, 476K+ visualizaciones en 30 días.",
       skills: ["Lead Generation", "Meta Ads", "TikTok", "Grilla de Contenido"],
+      metric: "476K+",
+      metricLabel: "Views / 30 días",
     },
     {
       name: "PRE Cayetano",
       description:
-        "Centro de Estudios Preuniversitarios UPCH. +10,755 personas alcanzadas en FB, +9,881 en IG, +650 interacciones orgánicas mensuales, +1.5 engagement.",
+        "Centro de Estudios Preuniversitarios UPCH. +10,755 alcance en FB, +9,881 en IG, +650 interacciones orgánicas mensuales.",
       skills: ["Facebook", "Instagram", "TikTok", "Testimonials"],
+      metric: "10.7K",
+      metricLabel: "Alcance FB",
     },
     {
       name: "Universidad María Auxiliadora",
       description:
-        "Gestión de 3 redes sociales con +30 publicaciones mensuales. Contenido informativo, comercial y de branding. TikTok: hasta 26K alcance y 554 interacciones por contenido comercial.",
+        "Gestión de 3 redes sociales con +30 publicaciones mensuales. TikTok: hasta 26K alcance y 554 interacciones por contenido comercial.",
       skills: ["Meta Ads", "TikTok Ads", "CRM", "Audiovisual"],
+      metric: "26K",
+      metricLabel: "Alcance TikTok",
     },
     {
-      name: "Decodivi — Eventos y Decoraciones",
+      name: "Decodivi — Eventos",
       description:
         "Creación de contenido y grabación/edición de videos para marca de eventos. +10,200 visualizaciones mensuales, +7,500 espectadores nuevos en TikTok.",
       skills: ["CapCut", "TikTok", "Video Production", "Community Management"],
+      metric: "7.5K",
+      metricLabel: "Nuevos viewers",
     },
   ],
+
   experience: [
     {
-      company: "Universidad Peruana Cayetano Heredia (UPCH)",
+      company: "Universidad Peruana Cayetano Heredia",
       title: "Content Manager",
-      dateRange: "Ene 2024 – Ene 2026",
-      bullets: [
-        "Lideré la estrategia de Social Media para Soy Cayetano (52K seguidores), PGE Cayetano y PRE Cayetano",
-        "Generé +150 leads orgánicos en la campaña de pregrado 2026-I mediante contenido estratégico",
-        "Alcancé +476K visualizaciones profesionales en 30 días para PGE Cayetano",
-        "Ejecuté estrategia de Brand Content con pilares informativo, comercial, branding y entretenimiento",
-        "Coordiné equipo creativo, producto, ventas y audiovisual para ejecución de contenido multiplataforma",
-        "Gestioné campañas de Meta Ads y TikTok Ads con monitoreo de métricas y reportes mensuales",
-      ],
+      dateRange: "2024",
+      description:
+        "Lideré estrategia de Social Media para Soy Cayetano (52K), PGE y PRE Cayetano. +150 leads orgánicos, +476K views en 30 días.",
     },
     {
-      company: "Universidad María Auxiliadora (UMA)",
+      company: "Universidad María Auxiliadora",
       title: "Asistente de Marketing y Publicidad",
       dateRange: "2021 – 2023",
-      bullets: [
-        "Creé grilla de contenido para las redes sociales con +30 publicaciones mensuales en 3 plataformas",
-        "Logré engagement de 2.1% en contenido comercial de TikTok con alcances de hasta 26K",
-        "Monitoreo y seguimiento del CRM HubSpot para el equipo de ventas",
-        "Difusión y captación para eventos virtuales de campaña de admisión",
-        "Redacción de copys para contenido orgánico y pagado de las RRSS",
-      ],
+      description:
+        "Grilla de contenido para 3 plataformas, +30 publicaciones mensuales. Engagement 2.1% en TikTok comercial.",
     },
     {
       company: "Asociación Cultural Wasi",
       title: "Gestora Cultural & Community Manager",
       dateRange: "2020",
-      bullets: [
-        "Gestioné RRSS para difusión y captación de clientes para talleres culturales",
-        "Parte del equipo de gestión para proyecto ganador del concurso 'Estímulos de Cultura' del Ministerio de Cultura",
-        "Coordiné con docentes y artistas de Perú y el extranjero para proyectos de narración oral",
-      ],
-    },
-    {
-      company: "Restaurante El Mortero",
-      title: "Marketing Digital — Voluntariado",
-      dateRange: "2020",
-      bullets: [
-        "Planificación y ejecución de plan de RRSS para la PYME",
-      ],
+      description:
+        "RRSS para talleres culturales. Proyecto ganador 'Estímulos de Cultura' del Ministerio de Cultura.",
     },
   ],
+
   education: [
     {
       school: "La Calle — Escuela Creativa",
       degree: "Creatividad Publicitaria",
       dateRange: "2025",
-      achievements: [],
     },
     {
       school: "IPAD",
-      degree: "Curso Especializado en Publicidad Digital",
+      degree: "Publicidad Digital",
       dateRange: "2024",
-      achievements: [],
+    },
+    {
+      school: "IPP",
+      degree: "Analítica Digital",
+      dateRange: "2023",
     },
     {
       school: "Toulouse Lautrec",
-      degree: "Diplomado de Community Manager y Social Media",
+      degree: "Diplomado Social Media",
       dateRange: "2022 – 2023",
-      achievements: [],
     },
     {
-      school: "Universidad San Martín de Porres (USMP)",
-      degree: "Bachiller en Ciencias de la Comunicación",
+      school: "Universidad San Martín de Porres",
+      degree: "Bach. Ciencias de la Comunicación",
       dateRange: "2017 – 2022",
-      achievements: [],
     },
   ],
 };
