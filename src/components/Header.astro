@@ -10,10 +10,11 @@ import { siteConfig } from "../config";
       <span style="font-family: 'Playfair Display', serif;">{siteConfig.firstName} {siteConfig.name.split(' ')[1]}</span>
     </a>
 
-    <!-- Right: nav links + CTA -->
+    <!-- Right: nav links + CTA (desktop) -->
     <div class="hidden md:flex items-center gap-6 lg:gap-8">
       <a href="#about" class="nav-link text-sm text-white/80 hover:text-white transition-colors">Sobre mí</a>
       <a href="#work" class="nav-link text-sm text-white/80 hover:text-white transition-colors">Proyectos</a>
+      <a href="#education" class="nav-link text-sm text-white/80 hover:text-white transition-colors">Educación</a>
       <a href="#experience" class="nav-link text-sm text-white/80 hover:text-white transition-colors">Experiencia</a>
       <a
         href={`mailto:${siteConfig.social.email}`}
@@ -23,7 +24,35 @@ import { siteConfig } from "../config";
         Contáctame!
       </a>
     </div>
+
+    <!-- Hamburger button (mobile) -->
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 gap-1.5"
+      aria-label="Abrir menú"
+    >
+      <span class="hamburger-line w-6 h-0.5 rounded-full transition-all duration-300" style={`background-color: ${siteConfig.colors.orange};`}></span>
+      <span class="hamburger-line w-6 h-0.5 rounded-full transition-all duration-300" style={`background-color: ${siteConfig.colors.orange};`}></span>
+      <span class="hamburger-line w-4 h-0.5 rounded-full transition-all duration-300 ml-auto" style={`background-color: ${siteConfig.colors.orange};`}></span>
+    </button>
   </nav>
+
+  <!-- Mobile menu overlay -->
+  <div id="mobile-menu" class="md:hidden fixed inset-0 top-0 z-40 pointer-events-none opacity-0 transition-opacity duration-300" style={`background-color: rgba(26, 26, 26, 0.98);`}>
+    <div class="flex flex-col items-center justify-center h-full gap-8">
+      <a href="#about" class="mobile-nav-link text-2xl font-semibold text-white/80 hover:text-white transition-colors" style="font-family: 'Cormorant Garamond', serif; font-style: italic;">Sobre mí</a>
+      <a href="#work" class="mobile-nav-link text-2xl font-semibold text-white/80 hover:text-white transition-colors" style="font-family: 'Cormorant Garamond', serif; font-style: italic;">Proyectos</a>
+      <a href="#education" class="mobile-nav-link text-2xl font-semibold text-white/80 hover:text-white transition-colors" style="font-family: 'Cormorant Garamond', serif; font-style: italic;">Educación</a>
+      <a href="#experience" class="mobile-nav-link text-2xl font-semibold text-white/80 hover:text-white transition-colors" style="font-family: 'Cormorant Garamond', serif; font-style: italic;">Experiencia</a>
+      <a
+        href={`mailto:${siteConfig.social.email}`}
+        class="mt-4 px-8 py-3 rounded-full text-lg font-semibold transition-all duration-300"
+        style={`border: 1.5px solid ${siteConfig.colors.orange}; color: ${siteConfig.colors.orange};`}
+      >
+        Contáctame!
+      </a>
+    </div>
+  </div>
 </header>
 
 <script>
@@ -35,6 +64,36 @@ import { siteConfig } from "../config";
       header?.classList.remove("header-scrolled");
     }
   });
+
+  // Mobile menu toggle
+  const menuBtn = document.getElementById("mobile-menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  let menuOpen = false;
+
+  menuBtn?.addEventListener("click", () => {
+    menuOpen = !menuOpen;
+    if (menuOpen) {
+      mobileMenu?.classList.remove("opacity-0", "pointer-events-none");
+      mobileMenu?.classList.add("opacity-100", "pointer-events-auto");
+      menuBtn?.classList.add("menu-open");
+      document.body.style.overflow = "hidden";
+    } else {
+      closeMenu();
+    }
+  });
+
+  function closeMenu() {
+    menuOpen = false;
+    mobileMenu?.classList.add("opacity-0", "pointer-events-none");
+    mobileMenu?.classList.remove("opacity-100", "pointer-events-auto");
+    menuBtn?.classList.remove("menu-open");
+    document.body.style.overflow = "";
+  }
+
+  // Close on link click
+  mobileMenu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => closeMenu());
+  });
 </script>
 
 <style>
@@ -42,5 +101,17 @@ import { siteConfig } from "../config";
     background-color: rgba(26, 26, 26, 0.95);
     backdrop-filter: blur(12px);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Hamburger animation */
+  .menu-open .hamburger-line:nth-child(1) {
+    transform: translateY(4px) rotate(45deg);
+  }
+  .menu-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  .menu-open .hamburger-line:nth-child(3) {
+    width: 1.5rem;
+    transform: translateY(-4px) rotate(-45deg);
   }
 </style>
