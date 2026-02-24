@@ -3,7 +3,7 @@ export const siteConfig = {
   firstName: "Glenda",
   title: "Content Manager & Estratega de Social Media",
   description:
-    "Comunicadora Social con 5+ años liderando estrategias de redes sociales para universidades y marcas en Perú",
+    "Comunicadora Social con 6+ años liderando estrategias de redes sociales para universidades y marcas en Perú",
   quote:
     "Me apasiona crear contenido de valor que conecte con las audiencias y genere resultados medibles.",
 
@@ -25,12 +25,12 @@ export const siteConfig = {
   location: "Lima, Perú",
 
   aboutMe:
-    "Comunicadora Social con más de 5 años de experiencia liderando y ejecutando estrategias de Social Media en el sector educativo. Especializada en gestión de redes sociales, redacción creativa, Meta Ads y TikTok Ads. He gestionado las cuentas oficiales de universidades como la Universidad Peruana Cayetano Heredia (UPCH) y la Universidad María Auxiliadora (UMA), generando comunidad digital y captación de leads orgánicos.",
+    "Comunicadora Social con más de 6 años liderando y ejecutando estrategias de Social Media en el sector educativo y de eventos. Especializada en gestión de redes sociales, redacción creativa, colaboración en eventos de captación y fidelización, coordinación con el equipo comercial, diseño y audiovisual, Meta y TikTok Ads. He gestionado las cuentas de la Universidad Peruana Cayetano Heredia (UPCH) y la Universidad María Auxiliadora (UMA), generando comunidad digital y captación de leads orgánicos en pro a las metas comerciales. Siempre estoy en constante aprendizaje y comprometida en asumir nuevos retos para desarrollarme profesionalmente sumando a los objetivos de la empresa aportando en el buen clima laboral.",
 
   stats: [
     { value: "52K+", label: "Seguidores gestionados" },
     { value: "150+", label: "Leads orgánicos" },
-    { value: "5+", label: "Años de experiencia" },
+    { value: "6+", label: "Años de experiencia" },
     { value: "476K+", label: "Visualizaciones" },
   ],
 
